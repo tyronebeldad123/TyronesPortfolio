@@ -437,7 +437,7 @@ function App() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> 
               
               <div className="p-6 bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl border border-slate-700/50 backdrop-blur-sm">
                 <h4 className="text-lg sm:text-xl font-bold mb-4 text-cyan-400">Availability</h4>
@@ -498,7 +498,7 @@ function App() {
         </div>
       </section>
 
-      {/* Footer - FIXED */}
+      {/* Footer - FIXED*/}
       <footer className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-700/50 w-full">
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
