@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import JungleLushDemo from './demos/JungleLushDemo';
 import WeatherWonderDemo from './demos/WeatherWonderDemo';
 import emailjs from '@emailjs/browser';
+import vocabventureImage from './assets/images/vocabventure.png';
+import weatherwonderImage from './assets/images/weatherwonder.png';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -41,12 +43,12 @@ function App() {
     },
     { 
       category: 'Backend', 
-      items: ['Node.js', 'Python', 'Express.js', 'SQL', 'MongoDB', 'REST APIs', 'GraphQL'],
+      items: ['Node.js', 'Python', 'Express.js', 'Xampp', 'REST APIs', 'MySQL'],
       icon: '⚙️'
     },
     { 
       category: 'Tools & Others', 
-      items: ['Git', 'GitHub', 'VS Code', 'Docker', 'Agile/Scrum', 'Figma', 'Postman'],
+      items: ['Git', 'GitHub', 'VS Code', 'Docker', 'Figma', 'Postman'],
       icon: '🛠️'
     }
   ];
@@ -59,6 +61,7 @@ function App() {
       tech: ['React', 'Java', 'Springboot', 'MySQL'],
       status: 'Live',
       hasDemo: true,
+      image: vocabventureImage,
       demoComponent: 'vocabventure'
     },
     {
@@ -68,6 +71,7 @@ function App() {
       tech: ['React', 'APIs', 'Tailwind CSS'],
       status: 'Live',
       hasDemo: true,
+      image: weatherwonderImage,
       demoComponent: 'weatherwonder'
     },
     {
@@ -531,26 +535,42 @@ const handleFormSubmit = async (e) => {
                 key={project.id}
                 className="group bg-gradient-to-br from-slate-800/30 to-slate-900/30 rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 backdrop-blur-sm"
               >
-                <div className="h-48 sm:h-56 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-                  <span className="text-6xl sm:text-7xl opacity-30 group-hover:scale-110 transition-transform duration-500">
-                    {project.id === 1 ? '📚' : project.id === 2 ? '☁️' : '🤖'}
-                  </span>
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      project.status === 'Live' ? 'bg-green-500/20 text-green-400' :
-                      project.status === 'In Progress' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-blue-500/20 text-blue-400'
-                    }`}>
-                      {project.status}
-                    </span>
-                    {project.hasDemo && (
-                      <div className="mt-2 px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-cyan-400/30 rounded-full text-xs font-semibold text-cyan-300">
-                        🎮 Live Demo
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <div className="h-48 sm:h-56 relative overflow-hidden">
+  {/* Conditional rendering for image */}
+  {project.image ? (
+    <>
+      <img 
+        src={project.image} 
+        alt={project.title}
+        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+    </>
+  ) : (
+    <div className="w-full h-full bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 flex items-center justify-center">
+      <span className="text-6xl sm:text-7xl opacity-30 group-hover:scale-110 transition-transform duration-500">
+        {project.fallbackEmoji || (project.id === 1 ? '📚' : project.id === 2 ? '☁️' : '🤖')}
+      </span>
+    </div>
+  )}
+  
+  {/* Status badges */}
+  <div className="absolute top-4 right-4">
+    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+      project.status === 'Live' ? 'bg-green-500/20 text-green-400' :
+      project.status === 'In Progress' ? 'bg-yellow-500/20 text-yellow-400' :
+      'bg-blue-500/20 text-blue-400'
+    }`}>
+      {project.status}
+    </span>
+    {project.hasDemo && (
+      <div className="mt-2 px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-cyan-400/30 rounded-full text-xs font-semibold text-cyan-300">
+        🎮 Live Demo
+      </div>
+    )}
+  </div>
+</div>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-lg sm:text-xl font-bold">{project.title}</h4>
