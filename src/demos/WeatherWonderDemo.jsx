@@ -166,7 +166,7 @@ export default function WeatherWonderDemo({ onClose }) {
           >
             <div className="flex items-center gap-2">
               <span className="text-lg group-hover:rotate-90 transition-transform">✕</span>
-              <span className="hidden md:inline text-sm font-medium">Close</span>
+              <span className="hidden md:inline text-sm font-medium">Close Demo</span>
             </div>
           </button>
         </div>

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import JungleLushDemo from './demos/JungleLushDemo';
+import ColorFlowDemo from './demos/ColorFlowDemo/ColorFlowDemo';
 import WeatherWonderDemo from './demos/WeatherWonderDemo';
 import emailjs from '@emailjs/browser';
 import vocabventureImage from './assets/images/vocabventure.png';
 import weatherwonderImage from './assets/images/weatherwonder.png';
+import colorflowImage from './assets/images/colorflow.png'; 
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -75,13 +77,16 @@ function App() {
       demoComponent: 'weatherwonder'
     },
     {
-      id: 3,
-      title: 'AI Content Analyzer',
-      description: 'Machine learning tool for content analysis and recommendations',
-      tech: ['Python', 'FastAPI', 'React', 'OpenAI API'],
-      status: 'Completed',  
-      hasDemo: false
-    }
+  id: 3,
+  title: 'ColorFlow',
+  description: 'Interactive color palette generator with real-time previews and export options',
+  tech: ['React', 'Canvas API', 'Tailwind CSS', 'Local Storage'],
+  status: 'Live',
+  hasDemo: true,
+  demoComponent: 'colorflow', // You'll need to create this component
+  image: colorflowImage, 
+  fallbackEmoji: '🎨'
+}
   ];
 
   const navItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
@@ -284,12 +289,15 @@ const handleFormSubmit = async (e) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden">
       {/* Demo Modal */}
-      {showDemo && currentDemo === 'vocabventure' && (
-        <JungleLushDemo onClose={handleCloseDemo} />
-      )}
-      {showDemo && currentDemo === 'weatherwonder' && (
-        <WeatherWonderDemo onClose={handleCloseDemo} />
-      )}
+{showDemo && currentDemo === 'vocabventure' && (
+  <JungleLushDemo onClose={handleCloseDemo} />
+)}
+{showDemo && currentDemo === 'weatherwonder' && (
+  <WeatherWonderDemo onClose={handleCloseDemo} />
+)}
+{showDemo && currentDemo === 'colorflow' && (
+  <ColorFlowDemo onClose={handleCloseDemo} />
+)}
       
       {/* Enhanced Navigation - FIXED WIDTH */}
       <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
@@ -605,9 +613,6 @@ const handleFormSubmit = async (e) => {
           </div>
           
           <div className="text-center mt-8 sm:mt-12">
-            <button className="px-6 sm:px-8 py-3 border-2 border-cyan-400/50 rounded-lg font-semibold hover:bg-cyan-400/10 hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-400/10 text-sm sm:text-base">
-              View All Projects →
-            </button>
           </div>
         </div>
       </section>
