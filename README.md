@@ -1,16 +1,54 @@
-# React + Vite
+**Tyrone Beldad | Portfolio**
+Welcome to my personal portfolio! This website showcases my projects, skills, experience, and my journey as an aspiring Full Stack Developer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Overview**
+- This portfolio is built with React and Vite, featuring:
+- Interactive UI and responsive design
+- Smooth navigation with section highlighting
+- Project demos for VocabVenture, WeatherWonder, and ColorFlow
+- Functional contact form integrated with EmailJS
+- Modern styling using Tailwind CSS and gradient effects
+- It demonstrates my proficiency in frontend and backend development, and serves as a platform to present my academic and personal projects.
 
-Currently, two official plugins are available:
+**Features**
+- Hero Section: Introduces me, highlights availability for OJT opportunities
+- About Section: Details my journey, skills, goals, and approach to software development
+- Skills Section: Categorized frontend, backend, and tools expertise, plus technologies currently learning
+- Projects Section: Showcases projects with images, tech stack, live demos, and status badges
+- Contact Section: Functional contact form with EmailJS and fallback mailto option, plus social links
+- Footer: Social links, credits, and responsive layout
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Projects**
+VocabVenture
+Description: English vocabulary game targeted at grade seven students
+Tech: React, Java, Spring Boot, MySQL
+Status: Live
+Demo: 🎮 Available
 
-## React Compiler
+WeatherWonder
+Description: Simple weather app using a free public API
+Tech: React, APIs, Tailwind CSS
+Status: Live
+Demo: 🎮 Available
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ColorFlow
+Description: Interactive color palette generator with real-time previews and export options
+Tech: React, Canvas API, Tailwind CSS, Local Storage
+Status: Live
+Demo: 🎮 Available
 
-## Expanding the ESLint configuration
+**Skills & Technologies**
+Frontend: React, JavaScript, TypeScript, HTML/CSS, Tailwind CSS, Vite, Next.js
+Backend: Node.js, Python, Express.js, XAMPP, REST APIs, MySQL
+Tools & Others: Git, GitHub, VS Code, Docker, Figma, Postman
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Currently Learning: Next.js 14, TypeScript, AWS, Blockchain Technology, Cybersecurity 📚
+
+**Contact**
+You can reach me through:
+**Email: tyroneclint.beldad@cit.edu
+LinkedIn: linkedin.com/in/tyrone-beldad-18b901365
+GitHub: github.com/tyronebeldad123**
+**Phone: +63 949 877 6653**
+
+Or send me a message directly via the contact form on the portfolio.
